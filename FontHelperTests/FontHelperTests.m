@@ -2,8 +2,6 @@
 //  FontHelperTests.m
 //  FontHelperTests
 //
-//  Created by dev on 5/28/14.
-//
 //
 
 #import <XCTest/XCTest.h>

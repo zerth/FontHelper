@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D75E35AA19367A0200434DF7"
                BuildableName = "FontHelper.framework"
-               BlueprintName = "FontHelper"
+               BlueprintName = "FontHelperFramework"
                ReferencedContainer = "container:FontHelper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D75E35C119367A0200434DF7"
-               BuildableName = "FontHelperTests.xctest"
-               BlueprintName = "FontHelperTests"
+               BuildableName = "FontHelperFrameworkTests.xctest"
+               BlueprintName = "FontHelperFrameworkTests"
                ReferencedContainer = "container:FontHelper.xcodeproj">
             </BuildableReference>
          </TestableReference>

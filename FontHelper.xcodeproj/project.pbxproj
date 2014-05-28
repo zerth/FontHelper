@@ -6,7 +6,22 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		D757A4B91936850200D9D521 /* FontHelperLibraryUniversal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D757A4BA1936850200D9D521 /* Build configuration list for PBXAggregateTarget "FontHelperLibraryUniversal" */;
+			buildPhases = (
+				D757A4BD1936855E00D9D521 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = FontHelperLibraryUniversal;
+			productName = FontHelperLibraryUniversal;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		D757A4C41936881600D9D521 /* FontHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = D75E35BB19367A0200434DF7 /* FontHelper.h */; };
 		D75E35AF19367A0200434DF7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75E35AE19367A0200434DF7 /* Cocoa.framework */; };
 		D75E35B919367A0200434DF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D75E35B719367A0200434DF7 /* InfoPlist.strings */; };
 		D75E35BD19367A0200434DF7 /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E35BC19367A0200434DF7 /* FontHelper.m */; };
@@ -15,6 +30,15 @@
 		D75E35C819367A0200434DF7 /* FontHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75E35AB19367A0200434DF7 /* FontHelper.framework */; };
 		D75E35CE19367A0200434DF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D75E35CC19367A0200434DF7 /* InfoPlist.strings */; };
 		D75E35D019367A0200434DF7 /* FontHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E35CF19367A0200434DF7 /* FontHelperTests.m */; };
+		D75E35DF19367C7700434DF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75E35DE19367C7700434DF7 /* Foundation.framework */; };
+		D75E35EC19367C7800434DF7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75E35C319367A0200434DF7 /* XCTest.framework */; };
+		D75E35ED19367C7800434DF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75E35DE19367C7700434DF7 /* Foundation.framework */; };
+		D75E35EF19367C7800434DF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75E35EE19367C7800434DF7 /* UIKit.framework */; };
+		D75E35F219367C7800434DF7 /* libFontHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D75E35DD19367C7700434DF7 /* libFontHelper.a */; };
+		D75E35F819367C7800434DF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D75E35F619367C7800434DF7 /* InfoPlist.strings */; };
+		D75E360119367D1400434DF7 /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E35BC19367A0200434DF7 /* FontHelper.m */; };
+		D75E360219367D1B00434DF7 /* FontHelper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D75E35BB19367A0200434DF7 /* FontHelper.h */; };
+		D75E360319367DAE00434DF7 /* FontHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E35CF19367A0200434DF7 /* FontHelperTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,9 +49,30 @@
 			remoteGlobalIDString = D75E35AA19367A0200434DF7;
 			remoteInfo = FontHelper;
 		};
+		D75E35F019367C7800434DF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D75E35A219367A0100434DF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D75E35DC19367C7700434DF7;
+			remoteInfo = FontHelperLibrary;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D75E35DB19367C7700434DF7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D75E360219367D1B00434DF7 /* FontHelper.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D757A4BE1936857B00D9D521 /* mkuniversal.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = mkuniversal.sh; sourceTree = "<group>"; };
 		D75E35AB19367A0200434DF7 /* FontHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FontHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75E35AE19367A0200434DF7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D75E35B119367A0200434DF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,11 +83,18 @@
 		D75E35BA19367A0200434DF7 /* FontHelper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FontHelper-Prefix.pch"; sourceTree = "<group>"; };
 		D75E35BB19367A0200434DF7 /* FontHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontHelper.h; sourceTree = "<group>"; };
 		D75E35BC19367A0200434DF7 /* FontHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontHelper.m; sourceTree = "<group>"; };
-		D75E35C219367A0200434DF7 /* FontHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D75E35C219367A0200434DF7 /* FontHelperFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontHelperFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75E35C319367A0200434DF7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D75E35CB19367A0200434DF7 /* FontHelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FontHelperTests-Info.plist"; sourceTree = "<group>"; };
 		D75E35CD19367A0200434DF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D75E35CF19367A0200434DF7 /* FontHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontHelperTests.m; sourceTree = "<group>"; };
+		D75E35DD19367C7700434DF7 /* libFontHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFontHelper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D75E35DE19367C7700434DF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D75E35E219367C7700434DF7 /* FontHelperLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FontHelperLibrary-Prefix.pch"; sourceTree = "<group>"; };
+		D75E35EB19367C7800434DF7 /* FontHelperLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontHelperLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D75E35EE19367C7800434DF7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D75E35F519367C7800434DF7 /* FontHelperLibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FontHelperLibraryTests-Info.plist"; sourceTree = "<group>"; };
+		D75E35F719367C7800434DF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +116,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D75E35DA19367C7700434DF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D75E35DF19367C7700434DF7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D75E35E819367C7800434DF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D75E35F219367C7800434DF7 /* libFontHelper.a in Frameworks */,
+				D75E35EC19367C7800434DF7 /* XCTest.framework in Frameworks */,
+				D75E35EF19367C7800434DF7 /* UIKit.framework in Frameworks */,
+				D75E35ED19367C7800434DF7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -72,6 +143,8 @@
 			children = (
 				D75E35B419367A0200434DF7 /* FontHelper */,
 				D75E35C919367A0200434DF7 /* FontHelperTests */,
+				D75E35E019367C7700434DF7 /* FontHelperLibrary */,
+				D75E35F319367C7800434DF7 /* FontHelperLibraryTests */,
 				D75E35AD19367A0200434DF7 /* Frameworks */,
 				D75E35AC19367A0200434DF7 /* Products */,
 			);
@@ -81,7 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				D75E35AB19367A0200434DF7 /* FontHelper.framework */,
-				D75E35C219367A0200434DF7 /* FontHelperTests.xctest */,
+				D75E35C219367A0200434DF7 /* FontHelperFrameworkTests.xctest */,
+				D75E35DD19367C7700434DF7 /* libFontHelper.a */,
+				D75E35EB19367C7800434DF7 /* FontHelperLibraryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +166,8 @@
 			children = (
 				D75E35AE19367A0200434DF7 /* Cocoa.framework */,
 				D75E35C319367A0200434DF7 /* XCTest.framework */,
+				D75E35DE19367C7700434DF7 /* Foundation.framework */,
+				D75E35EE19367C7800434DF7 /* UIKit.framework */,
 				D75E35B019367A0200434DF7 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -144,6 +221,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D75E35E019367C7700434DF7 /* FontHelperLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				D75E35E119367C7700434DF7 /* Supporting Files */,
+			);
+			path = FontHelperLibrary;
+			sourceTree = "<group>";
+		};
+		D75E35E119367C7700434DF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D757A4BE1936857B00D9D521 /* mkuniversal.sh */,
+				D75E35E219367C7700434DF7 /* FontHelperLibrary-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D75E35F319367C7800434DF7 /* FontHelperLibraryTests */ = {
+			isa = PBXGroup;
+			children = (
+				D75E35F419367C7800434DF7 /* Supporting Files */,
+			);
+			path = FontHelperLibraryTests;
+			sourceTree = "<group>";
+		};
+		D75E35F419367C7800434DF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D75E35F519367C7800434DF7 /* FontHelperLibraryTests-Info.plist */,
+				D75E35F619367C7800434DF7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -151,15 +262,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757A4C41936881600D9D521 /* FontHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D75E35AA19367A0200434DF7 /* FontHelper */ = {
+		D75E35AA19367A0200434DF7 /* FontHelperFramework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D75E35D319367A0200434DF7 /* Build configuration list for PBXNativeTarget "FontHelper" */;
+			buildConfigurationList = D75E35D319367A0200434DF7 /* Build configuration list for PBXNativeTarget "FontHelperFramework" */;
 			buildPhases = (
 				D75E35A619367A0200434DF7 /* Sources */,
 				D75E35A719367A0200434DF7 /* Frameworks */,
@@ -170,14 +282,14 @@
 			);
 			dependencies = (
 			);
-			name = FontHelper;
+			name = FontHelperFramework;
 			productName = FontHelper;
 			productReference = D75E35AB19367A0200434DF7 /* FontHelper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D75E35C119367A0200434DF7 /* FontHelperTests */ = {
+		D75E35C119367A0200434DF7 /* FontHelperFrameworkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D75E35D619367A0200434DF7 /* Build configuration list for PBXNativeTarget "FontHelperTests" */;
+			buildConfigurationList = D75E35D619367A0200434DF7 /* Build configuration list for PBXNativeTarget "FontHelperFrameworkTests" */;
 			buildPhases = (
 				D75E35BE19367A0200434DF7 /* Sources */,
 				D75E35BF19367A0200434DF7 /* Frameworks */,
@@ -188,9 +300,44 @@
 			dependencies = (
 				D75E35C719367A0200434DF7 /* PBXTargetDependency */,
 			);
-			name = FontHelperTests;
+			name = FontHelperFrameworkTests;
 			productName = FontHelperTests;
-			productReference = D75E35C219367A0200434DF7 /* FontHelperTests.xctest */;
+			productReference = D75E35C219367A0200434DF7 /* FontHelperFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D75E35DC19367C7700434DF7 /* FontHelperLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D75E35FB19367C7800434DF7 /* Build configuration list for PBXNativeTarget "FontHelperLibrary" */;
+			buildPhases = (
+				D75E35D919367C7700434DF7 /* Sources */,
+				D75E35DA19367C7700434DF7 /* Frameworks */,
+				D75E35DB19367C7700434DF7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FontHelperLibrary;
+			productName = FontHelperLibrary;
+			productReference = D75E35DD19367C7700434DF7 /* libFontHelper.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D75E35EA19367C7800434DF7 /* FontHelperLibraryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D75E35FE19367C7800434DF7 /* Build configuration list for PBXNativeTarget "FontHelperLibraryTests" */;
+			buildPhases = (
+				D75E35E719367C7800434DF7 /* Sources */,
+				D75E35E819367C7800434DF7 /* Frameworks */,
+				D75E35E919367C7800434DF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D75E35F119367C7800434DF7 /* PBXTargetDependency */,
+			);
+			name = FontHelperLibraryTests;
+			productName = FontHelperLibraryTests;
+			productReference = D75E35EB19367C7800434DF7 /* FontHelperLibraryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -202,6 +349,9 @@
 				LastUpgradeCheck = 0510;
 				TargetAttributes = {
 					D75E35C119367A0200434DF7 = {
+						TestTargetID = D75E35AA19367A0200434DF7;
+					};
+					D75E35EA19367C7800434DF7 = {
 						TestTargetID = D75E35AA19367A0200434DF7;
 					};
 				};
@@ -218,8 +368,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D75E35AA19367A0200434DF7 /* FontHelper */,
-				D75E35C119367A0200434DF7 /* FontHelperTests */,
+				D75E35AA19367A0200434DF7 /* FontHelperFramework */,
+				D75E35C119367A0200434DF7 /* FontHelperFrameworkTests */,
+				D75E35DC19367C7700434DF7 /* FontHelperLibrary */,
+				D75E35EA19367C7800434DF7 /* FontHelperLibraryTests */,
+				D757A4B91936850200D9D521 /* FontHelperLibraryUniversal */,
 			);
 		};
 /* End PBXProject section */
@@ -241,7 +394,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D75E35E919367C7800434DF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D75E35F819367C7800434DF7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D757A4BD1936855E00D9D521 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/${PROJECT}Library/mkuniversal.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D75E35A619367A0200434DF7 /* Sources */ = {
@@ -260,13 +437,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D75E35D919367C7700434DF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D75E360119367D1400434DF7 /* FontHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D75E35E719367C7800434DF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D75E360319367DAE00434DF7 /* FontHelperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		D75E35C719367A0200434DF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D75E35AA19367A0200434DF7 /* FontHelper */;
+			target = D75E35AA19367A0200434DF7 /* FontHelperFramework */;
 			targetProxy = D75E35C619367A0200434DF7 /* PBXContainerItemProxy */;
+		};
+		D75E35F119367C7800434DF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D75E35DC19367C7700434DF7 /* FontHelperLibrary */;
+			targetProxy = D75E35F019367C7800434DF7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -287,9 +485,31 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		D75E35F619367C7800434DF7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D75E35F719367C7800434DF7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D757A4BB1936850200D9D521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D757A4BC1936850200D9D521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		D75E35D119367A0200434DF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -370,7 +590,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FontHelper/FontHelper-Prefix.pch";
 				INFOPLIST_FILE = "FontHelper/FontHelper-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FontHelper;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -385,7 +605,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FontHelper/FontHelper-Prefix.pch";
 				INFOPLIST_FILE = "FontHelper/FontHelper-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FontHelper;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -430,9 +650,111 @@
 			};
 			name = Release;
 		};
+		D75E35FC19367C7800434DF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FontHelperLibrary.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FontHelperLibrary/FontHelperLibrary-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRIVATE_HEADERS_FOLDER_PATH = include;
+				PRODUCT_NAME = FontHelper;
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D75E35FD19367C7800434DF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FontHelperLibrary.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FontHelperLibrary/FontHelperLibrary-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRIVATE_HEADERS_FOLDER_PATH = include;
+				PRODUCT_NAME = FontHelper;
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D75E35FF19367C7800434DF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FontHelper.framework/Versions/A/FontHelper";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FontHelperLibrary/FontHelperLibrary-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FontHelperLibraryTests/FontHelperLibraryTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D75E360019367C7800434DF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FontHelper.framework/Versions/A/FontHelper";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FontHelperLibrary/FontHelperLibrary-Prefix.pch";
+				INFOPLIST_FILE = "FontHelperLibraryTests/FontHelperLibraryTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D757A4BA1936850200D9D521 /* Build configuration list for PBXAggregateTarget "FontHelperLibraryUniversal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D757A4BB1936850200D9D521 /* Debug */,
+				D757A4BC1936850200D9D521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D75E35A519367A0100434DF7 /* Build configuration list for PBXProject "FontHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -442,21 +764,41 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D75E35D319367A0200434DF7 /* Build configuration list for PBXNativeTarget "FontHelper" */ = {
+		D75E35D319367A0200434DF7 /* Build configuration list for PBXNativeTarget "FontHelperFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D75E35D419367A0200434DF7 /* Debug */,
 				D75E35D519367A0200434DF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		D75E35D619367A0200434DF7 /* Build configuration list for PBXNativeTarget "FontHelperTests" */ = {
+		D75E35D619367A0200434DF7 /* Build configuration list for PBXNativeTarget "FontHelperFrameworkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D75E35D719367A0200434DF7 /* Debug */,
 				D75E35D819367A0200434DF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D75E35FB19367C7800434DF7 /* Build configuration list for PBXNativeTarget "FontHelperLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D75E35FC19367C7800434DF7 /* Debug */,
+				D75E35FD19367C7800434DF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D75E35FE19367C7800434DF7 /* Build configuration list for PBXNativeTarget "FontHelperLibraryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D75E35FF19367C7800434DF7 /* Debug */,
+				D75E360019367C7800434DF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
