@@ -11,14 +11,16 @@
 #if DEFINE_URL_GETFSREPR_SHIM
 
 - (BOOL) getFileSystemRepresentation:(char *)buffer maxLength:(NSUInteger)maxBufferLength {
-    NSString* path, parameterString, fullPath;
+    NSString *path, *parameterString, *fullPath;
     path = [self path];
     parameterString = [self parameterString];
     fullPath = path;
     if (parameterString) {
         fullPath = [fullPath stringByAppendingFormat: @";%@", parameterString];
     }
-    // fixme; write fullpath to buffer if possible.
+    if ([fullPath length] < maxBufferLength) {
+        return [fullPath getCString: buffer maxLength: maxBufferLength encoding: NSUTF8StringEncoding];
+    }
     return NO;
 }
 
