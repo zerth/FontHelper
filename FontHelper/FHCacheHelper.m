@@ -44,13 +44,19 @@
                 NSLog(@"a file exists at %s\n", path);
                 NSInputStream *istream = [NSInputStream inputStreamWithURL: candidate];
                 if (istream) {
-                    NSLog(@"opened istream on %s\n", path);
-                    NSString *actualDigest = [istream md5sum];
-                    if ([hexdigest isEqualToString: actualDigest]) {
-                        NSLog(@"candidate %@ digest matches expected value %@\n", candidate, hexdigest);
-                        return candidate;
-                    } else {
-                        NSLog(@"digest mismatch: expected %@, actual %@\n", hexdigest, actualDigest);
+                    @try {
+                        [istream open];
+                        NSLog(@"opened istream on %s\n", path);
+                        NSString *actualDigest = [istream md5sum];
+                        if ([hexdigest isEqualToString: actualDigest]) {
+                            NSLog(@"candidate %@ digest matches expected value %@\n", candidate, hexdigest);
+                            return candidate;
+                        } else {
+                            NSLog(@"digest mismatch: expected %@, actual %@\n", hexdigest, actualDigest);
+                        }
+                    }
+                    @finally {
+                        [istream close];
                     }
                 }
                 [[NSFileManager defaultManager] removeItemAtPath: nspath error: nil];
