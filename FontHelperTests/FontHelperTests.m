@@ -7,6 +7,8 @@
 #import <XCTest/XCTest.h>
 
 #import "NSData+FHDigests.h"
+#import "FHCacheHelper.h"
+#import "FontHelper.h"
 
 @interface FontHelperTests : XCTestCase
 
@@ -26,7 +28,7 @@
     [super tearDown];
 }
 
-- (void)testDigestCategory
+- (void)testNSDataDigest
 {
     NSDictionary *md5pairs = [NSDictionary dictionaryWithObjectsAndKeys:
                               @"d41d8cd98f00b204e9800998ecf8427e", @"",
@@ -56,6 +58,59 @@
             XCTAssertEqualObjects(digest, result);
         }];
     }];
+}
+
+- (void)testNSInputStreamDigest
+{
+    NSString *str = @"hello, world! i am a potato. i like cheese.";
+    NSData *data = [str dataUsingEncoding: NSUTF8StringEncoding];
+    NSURL *tmp = [FHCacheHelper findOrCacheData: data inSubdirectory: @"cheesier"];
+    @try {
+        XCTAssert(tmp);
+        NSInputStream *istream = [NSInputStream inputStreamWithURL: tmp];
+        XCTAssert(istream);
+        NSString *hexdigest, *expected;
+        @try {
+            [istream open];
+            hexdigest = [istream md5sum];
+        }
+        @finally {
+            [istream close];
+        }
+        expected = [data md5sum];
+        XCTAssertEqualObjects(hexdigest, expected);
+    }
+    @finally {
+        [[NSFileManager defaultManager] removeItemAtURL: tmp error: nil];
+    }
+}
+
+- (void)testCacheHelper
+{
+    NSString *str = @"hello, world! i am a potato.";
+    NSData *data = [str dataUsingEncoding: NSUTF8StringEncoding];
+    NSURL *tmp = [FHCacheHelper findOrCacheData: data inSubdirectory: @"the cheesiest!"];
+    @try {
+        XCTAssert(tmp);
+        NSData *actual = [NSData dataWithContentsOfURL: tmp];
+        NSString *hexdigest = [actual md5sum];
+        NSString *expected = [data md5sum];
+        XCTAssertEqualObjects(hexdigest, expected);
+    }
+    @finally {
+        [[NSFileManager defaultManager] removeItemAtURL: tmp error: nil];
+    }
+}
+
+- (void)testLoadFontData
+{
+    NSDictionary *dict = [FontHelper loadFontData];
+    NSString *hexdigest = [dict objectForKey: @"glyphsTableDigest"];
+    XCTAssert(hexdigest);
+    NSString *cacheFile = [dict objectForKey: @"glyf"];
+    XCTAssert(cacheFile);
+    XCTAssertEqualObjects(hexdigest, [[NSData dataWithContentsOfURL: [NSURL URLWithString: cacheFile]]
+                                       md5sum]);
 }
 
 @end
