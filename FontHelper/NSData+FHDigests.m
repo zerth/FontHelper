@@ -8,13 +8,13 @@
 
 
 static char* buf_to_hex(const uint8_t *src, size_t src_count, char *dst);
+
 static NSString* do_digest(unsigned char *(fn)(const void*, CC_LONG, unsigned char*),
                            const void*,
                            CC_LONG,
                            uint8_t*,
                            size_t,
                            char*);
-
 
 @implementation NSData (FHDigests)
 
@@ -44,7 +44,6 @@ static NSString* do_digest(unsigned char *(fn)(const void*, CC_LONG, unsigned ch
 
 @end
 
-
 static NSString* do_digest(unsigned char *(fn)(const void *, CC_LONG, unsigned char *),
                            const void *data,
                            CC_LONG datasize,
@@ -57,6 +56,50 @@ static NSString* do_digest(unsigned char *(fn)(const void *, CC_LONG, unsigned c
     }
     return nil;
 }
+
+
+@implementation NSInputStream (FHDigests)
+
+- (NSString*) md5sum {
+    size_t dlen = CC_MD5_DIGEST_LENGTH;
+    uint8_t digest[dlen];
+    char digest_str[2*dlen+1];
+
+    CC_MD5_CTX ctx;
+    assert(CC_MD5_Init(&ctx));
+
+    uint8_t buf[READ_CHUNK_SIZE];
+    NSInteger count;
+    while ((count = [self read: buf maxLength: READ_CHUNK_SIZE]) > 0) {
+        assert(CC_MD5_Update(&ctx, buf, (CC_LONG) count));
+    }
+    assert(CC_MD5_Final(digest, &ctx));
+    return [NSString stringWithCString: buf_to_hex(digest, dlen, digest_str)
+                              encoding: NSASCIIStringEncoding];
+}
+
+- (NSString*) sha1sum {
+    size_t dlen = CC_SHA1_DIGEST_LENGTH;
+    uint8_t digest[dlen];
+    char digest_str[2*dlen+1];
+
+    CC_SHA1_CTX ctx;
+    assert(CC_SHA1_Init(&ctx));
+
+    uint8_t buf[READ_CHUNK_SIZE];
+    NSInteger count;
+    while ((count = [self read: buf maxLength: READ_CHUNK_SIZE]) > 0) {
+        assert(CC_SHA1_Update(&ctx, buf, (CC_LONG) count));
+    }
+    assert(CC_SHA1_Final(digest, &ctx));
+    return [NSString stringWithCString: buf_to_hex(digest, dlen, digest_str)
+                              encoding: NSASCIIStringEncoding];
+}
+
+@end
+
+
+
 
 static char hex_digits[16] = { '0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f' };
 
