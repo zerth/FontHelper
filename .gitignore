@@ -1,3 +1,5 @@
 *.a
 *.xcbkptlist
 *.build
+*~
+.xemacs-backup
