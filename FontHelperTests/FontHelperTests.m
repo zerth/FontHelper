@@ -72,12 +72,12 @@
         NSString *hexdigest, *expected;
         @try {
             [istream open];
-            hexdigest = [istream md5sum];
+            hexdigest = [istream sha1sum];
         }
         @finally {
             [istream close];
         }
-        expected = [data md5sum];
+        expected = [data sha1sum];
         XCTAssertEqualObjects(hexdigest, expected);
     }
     @finally {
