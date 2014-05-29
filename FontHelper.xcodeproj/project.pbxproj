@@ -33,6 +33,9 @@
 		D757A4DA1936C9F000D9D521 /* NSData+FHDigests.h in Headers */ = {isa = PBXBuildFile; fileRef = D757A4D81936C9F000D9D521 /* NSData+FHDigests.h */; };
 		D757A4DB1936C9F000D9D521 /* NSData+FHDigests.m in Sources */ = {isa = PBXBuildFile; fileRef = D757A4D91936C9F000D9D521 /* NSData+FHDigests.m */; };
 		D757A4DC1936C9F000D9D521 /* NSData+FHDigests.m in Sources */ = {isa = PBXBuildFile; fileRef = D757A4D91936C9F000D9D521 /* NSData+FHDigests.m */; };
+		D757A4DF1937067600D9D521 /* FHCacheHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = D757A4DD1937067600D9D521 /* FHCacheHelper.h */; };
+		D757A4E01937067600D9D521 /* FHCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D757A4DE1937067600D9D521 /* FHCacheHelper.m */; };
+		D757A4E11937067600D9D521 /* FHCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D757A4DE1937067600D9D521 /* FHCacheHelper.m */; };
 		D75E35AF19367A0200434DF7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75E35AE19367A0200434DF7 /* Cocoa.framework */; };
 		D75E35B919367A0200434DF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D75E35B719367A0200434DF7 /* InfoPlist.strings */; };
 		D75E35BD19367A0200434DF7 /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E35BC19367A0200434DF7 /* FontHelper.m */; };
@@ -91,6 +94,8 @@
 		D757A4CF1936AEF400D9D521 /* NSURL+FHURLShim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+FHURLShim.m"; sourceTree = "<group>"; };
 		D757A4D81936C9F000D9D521 /* NSData+FHDigests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FHDigests.h"; sourceTree = "<group>"; };
 		D757A4D91936C9F000D9D521 /* NSData+FHDigests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FHDigests.m"; sourceTree = "<group>"; };
+		D757A4DD1937067600D9D521 /* FHCacheHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHCacheHelper.h; sourceTree = "<group>"; };
+		D757A4DE1937067600D9D521 /* FHCacheHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHCacheHelper.m; sourceTree = "<group>"; };
 		D75E35AB19367A0200434DF7 /* FontHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FontHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75E35AE19367A0200434DF7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D75E35B119367A0200434DF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -214,6 +219,8 @@
 			children = (
 				D75E35BB19367A0200434DF7 /* FontHelper.h */,
 				D75E35BC19367A0200434DF7 /* FontHelper.m */,
+				D757A4DD1937067600D9D521 /* FHCacheHelper.h */,
+				D757A4DE1937067600D9D521 /* FHCacheHelper.m */,
 				D757A4D81936C9F000D9D521 /* NSData+FHDigests.h */,
 				D757A4D91936C9F000D9D521 /* NSData+FHDigests.m */,
 				D757A4CE1936AEF400D9D521 /* NSURL+FHURLShim.h */,
@@ -295,6 +302,7 @@
 				D757A4D01936AEF400D9D521 /* NSURL+FHURLShim.h in Headers */,
 				D757A4C41936881600D9D521 /* FontHelper.h in Headers */,
 				D757A4DA1936C9F000D9D521 /* NSData+FHDigests.h in Headers */,
+				D757A4DF1937067600D9D521 /* FHCacheHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757A4E01937067600D9D521 /* FHCacheHelper.m in Sources */,
 				D757A4DB1936C9F000D9D521 /* NSData+FHDigests.m in Sources */,
 				D75E35BD19367A0200434DF7 /* FontHelper.m in Sources */,
 				D757A4D11936AEF400D9D521 /* NSURL+FHURLShim.m in Sources */,
@@ -475,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757A4E11937067600D9D521 /* FHCacheHelper.m in Sources */,
 				D757A4DC1936C9F000D9D521 /* NSData+FHDigests.m in Sources */,
 				D75E360119367D1400434DF7 /* FontHelper.m in Sources */,
 				D757A4D21936AEF400D9D521 /* NSURL+FHURLShim.m in Sources */,

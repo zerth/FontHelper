@@ -4,11 +4,8 @@
 //
 //
 
-#import "FontHelper.h"
 #import <CoreText/CTFont.h>
-
-#import "NSData+FHDigests.h"
-#import "NSURL+FHURLShim.h"
+#import "FontHelper.h"
 #import "FHCacheHelper.h"
 
 @implementation FontHelper
