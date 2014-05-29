@@ -9,22 +9,23 @@
 
 #import "NSData+FHDigests.h"
 #import "NSURL+FHURLShim.h"
+#import "FHCacheHelper.h"
 
 @implementation FontHelper
 
 
-+ (id)loadFontData {
++ (NSDictionary*) loadFontData {
     NSString *font_name = @"Verdana";
     FONT *font = (__bridge_transfer FONT*)CTFontCreateWithName((__bridge CFStringRef) font_name, 0.0, NULL);
     // note: CTFontRef is toll-free bridged w/UIFont & NSFont
     if (font) {
-        return [FontHelper cacheFontData: font];
+        return [self cacheFontData: font];
     }
     return nil;
 }
 
 
-+ (id) cacheFontData:(FONT*)font {
++ (NSDictionary*) cacheFontData:(FONT*)font {
     NSArray* tags = (__bridge_transfer NSArray*)CTFontCopyAvailableTables((__bridge CTFontRef)font,
                                                                           kCTFontTableOptionNoOptions);
     CFIndex i, count = [tags count];
@@ -33,35 +34,27 @@
     CTFontTableTag t;
     for (i = 0; i < count; i++) {
         t = (CTFontTableTag)(uintptr_t)CFArrayGetValueAtIndex((__bridge CFArrayRef)tags, i);
-        [FontHelper updateFontDict: dict withFont: font andTag: t];
+        [self updateFontDict: dict withFont: font andTag: t];
     }
     return dict;
 }
 
 
-+ (NSArray*) glyphDirectoryURLsForFont:(FONT*)font {
-    NSString *glyphDirName = [NSString stringWithFormat: @"glyphs-%@-%1.2f",
-                              [font fontName], [font pointSize]];
-    NSArray *candidates = [[NSFileManager defaultManager]
-                           URLsForDirectory: NSCachesDirectory
-                           inDomains: NSLocalDomainMask];
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity: [candidates count]];
-    for (NSURL *url in candidates) {
-        [result addObject: [url URLByAppendingPathComponent: glyphDirName
-                                                isDirectory: YES]];
-    }
-    return result;
++ (NSURL*) findOrCacheGlyphData:(NSData*)data forFont:(FONT*)font {
+    return [FHCacheHelper findOrCacheData: data
+                           inSubdirectory: [NSString stringWithFormat: @"glyphs-%@-%1.2f",
+                                            [font fontName], [font pointSize]]];
 }
 
 
-+ (id) updateFontDict:(NSMutableDictionary*)dict withFont:(FONT*)font andTag:(CTFontTableTag)t {
++ (void) updateFontDict:(NSMutableDictionary*)dict withFont:(FONT*)font andTag:(CTFontTableTag)t {
     char keyName[5] = {0, 0, 0, 0, 0};
     uint32_t tt = CFSwapInt32HostToLittle(t);
     keyName[0] = (tt & 0x7F000000) >> 24;
     keyName[1] = (tt & 0x007F0000) >> 16;
     keyName[2] = (tt & 0x00007F00) >> 8;
     keyName[3] = (tt & 0x0000007F) >> 0;
-    NSString* dictKey = [NSString stringWithCString: keyName
+    NSString *dictKey = [NSString stringWithCString: keyName
                                            encoding: NSASCIIStringEncoding];
     NSData* data;
     switch (t) {
@@ -78,20 +71,24 @@
                 data = (__bridge_transfer NSData*)CTFontCopyTable((__bridge CTFontRef)font,
                                                                   t,
                                                                   kCTFontTableOptionNoOptions);
-                NSLog(@"MD5sum of table for %s is %@\n", keyName, [data md5sum]);
                 if (kCTFontTableGlyf != t) {
                     if (data) {
                         [dict setObject: data forKey: dictKey];
                     }
                 } else {
-                    // fixme: compute digest and write to cache dir if not already present.
+                    // compute digest of glyphs table and write to cache dir if not already present, then store the filename as the dict value.
+                    NSURL *cachedGlyphs = [self findOrCacheGlyphData: data forFont: font];
+                    if (cachedGlyphs) {
+                        [dict setObject: [cachedGlyphs absoluteString] forKey: dictKey];
+                        [dict setObject: [cachedGlyphs lastPathComponent] forKey: @"glyphsTableDigest"];
+                    }
+                    assert(cachedGlyphs);
                 }
                 break;
             }
         default:
             break;
     }
-    return nil;
 }
 
 @end
