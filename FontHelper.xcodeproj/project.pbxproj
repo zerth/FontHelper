@@ -22,6 +22,17 @@
 
 /* Begin PBXBuildFile section */
 		D757A4C41936881600D9D521 /* FontHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = D75E35BB19367A0200434DF7 /* FontHelper.h */; };
+		D757A4C61936A17900D9D521 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757A4C51936A17900D9D521 /* CoreText.framework */; };
+		D757A4C71936A18300D9D521 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757A4C51936A17900D9D521 /* CoreText.framework */; };
+		D757A4C91936A18A00D9D521 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757A4C81936A18A00D9D521 /* CoreText.framework */; };
+		D757A4CA1936A19000D9D521 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757A4C81936A18A00D9D521 /* CoreText.framework */; };
+		D757A4CC1936A26E00D9D521 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757A4CB1936A26E00D9D521 /* UIKit.framework */; };
+		D757A4D01936AEF400D9D521 /* NSURL+FHURLShim.h in Headers */ = {isa = PBXBuildFile; fileRef = D757A4CE1936AEF400D9D521 /* NSURL+FHURLShim.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		D757A4D11936AEF400D9D521 /* NSURL+FHURLShim.m in Sources */ = {isa = PBXBuildFile; fileRef = D757A4CF1936AEF400D9D521 /* NSURL+FHURLShim.m */; };
+		D757A4D21936AEF400D9D521 /* NSURL+FHURLShim.m in Sources */ = {isa = PBXBuildFile; fileRef = D757A4CF1936AEF400D9D521 /* NSURL+FHURLShim.m */; };
+		D757A4DA1936C9F000D9D521 /* NSData+FHDigests.h in Headers */ = {isa = PBXBuildFile; fileRef = D757A4D81936C9F000D9D521 /* NSData+FHDigests.h */; };
+		D757A4DB1936C9F000D9D521 /* NSData+FHDigests.m in Sources */ = {isa = PBXBuildFile; fileRef = D757A4D91936C9F000D9D521 /* NSData+FHDigests.m */; };
+		D757A4DC1936C9F000D9D521 /* NSData+FHDigests.m in Sources */ = {isa = PBXBuildFile; fileRef = D757A4D91936C9F000D9D521 /* NSData+FHDigests.m */; };
 		D75E35AF19367A0200434DF7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75E35AE19367A0200434DF7 /* Cocoa.framework */; };
 		D75E35B919367A0200434DF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D75E35B719367A0200434DF7 /* InfoPlist.strings */; };
 		D75E35BD19367A0200434DF7 /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E35BC19367A0200434DF7 /* FontHelper.m */; };
@@ -73,6 +84,13 @@
 
 /* Begin PBXFileReference section */
 		D757A4BE1936857B00D9D521 /* mkuniversal.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = mkuniversal.sh; sourceTree = "<group>"; };
+		D757A4C51936A17900D9D521 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		D757A4C81936A18A00D9D521 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		D757A4CB1936A26E00D9D521 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D757A4CE1936AEF400D9D521 /* NSURL+FHURLShim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+FHURLShim.h"; sourceTree = "<group>"; };
+		D757A4CF1936AEF400D9D521 /* NSURL+FHURLShim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+FHURLShim.m"; sourceTree = "<group>"; };
+		D757A4D81936C9F000D9D521 /* NSData+FHDigests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FHDigests.h"; sourceTree = "<group>"; };
+		D757A4D91936C9F000D9D521 /* NSData+FHDigests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FHDigests.m"; sourceTree = "<group>"; };
 		D75E35AB19367A0200434DF7 /* FontHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FontHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75E35AE19367A0200434DF7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D75E35B119367A0200434DF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757A4C61936A17900D9D521 /* CoreText.framework in Frameworks */,
 				D75E35AF19367A0200434DF7 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757A4C71936A18300D9D521 /* CoreText.framework in Frameworks */,
 				D75E35C519367A0200434DF7 /* Cocoa.framework in Frameworks */,
 				D75E35C819367A0200434DF7 /* FontHelper.framework in Frameworks */,
 				D75E35C419367A0200434DF7 /* XCTest.framework in Frameworks */,
@@ -120,6 +140,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757A4CC1936A26E00D9D521 /* UIKit.framework in Frameworks */,
+				D757A4C91936A18A00D9D521 /* CoreText.framework in Frameworks */,
 				D75E35DF19367C7700434DF7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,10 +150,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D75E35F219367C7800434DF7 /* libFontHelper.a in Frameworks */,
+				D757A4CA1936A19000D9D521 /* CoreText.framework in Frameworks */,
 				D75E35EC19367C7800434DF7 /* XCTest.framework in Frameworks */,
 				D75E35EF19367C7800434DF7 /* UIKit.framework in Frameworks */,
 				D75E35ED19367C7800434DF7 /* Foundation.framework in Frameworks */,
+				D75E35F219367C7800434DF7 /* libFontHelper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +187,9 @@
 		D75E35AD19367A0200434DF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D757A4CB1936A26E00D9D521 /* UIKit.framework */,
+				D757A4C81936A18A00D9D521 /* CoreText.framework */,
+				D757A4C51936A17900D9D521 /* CoreText.framework */,
 				D75E35AE19367A0200434DF7 /* Cocoa.framework */,
 				D75E35C319367A0200434DF7 /* XCTest.framework */,
 				D75E35DE19367C7700434DF7 /* Foundation.framework */,
@@ -188,6 +214,10 @@
 			children = (
 				D75E35BB19367A0200434DF7 /* FontHelper.h */,
 				D75E35BC19367A0200434DF7 /* FontHelper.m */,
+				D757A4D81936C9F000D9D521 /* NSData+FHDigests.h */,
+				D757A4D91936C9F000D9D521 /* NSData+FHDigests.m */,
+				D757A4CE1936AEF400D9D521 /* NSURL+FHURLShim.h */,
+				D757A4CF1936AEF400D9D521 /* NSURL+FHURLShim.m */,
 				D75E35B519367A0200434DF7 /* Supporting Files */,
 			);
 			path = FontHelper;
@@ -262,7 +292,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757A4D01936AEF400D9D521 /* NSURL+FHURLShim.h in Headers */,
 				D757A4C41936881600D9D521 /* FontHelper.h in Headers */,
+				D757A4DA1936C9F000D9D521 /* NSData+FHDigests.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +457,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757A4DB1936C9F000D9D521 /* NSData+FHDigests.m in Sources */,
 				D75E35BD19367A0200434DF7 /* FontHelper.m in Sources */,
+				D757A4D11936AEF400D9D521 /* NSURL+FHURLShim.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +475,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757A4DC1936C9F000D9D521 /* NSData+FHDigests.m in Sources */,
 				D75E360119367D1400434DF7 /* FontHelper.m in Sources */,
+				D757A4D21936AEF400D9D521 /* NSURL+FHURLShim.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
